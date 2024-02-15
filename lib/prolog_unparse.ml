@@ -52,4 +52,4 @@ and pp_bop f = function
   | BPlus -> fprintf f "%a" string_quoted "+"
   | BTimes -> fprintf f "%a" string_quoted "*"
 
-let unparse e = printf "%a" pp_expr e
+let unparse e = printf "%a\n" pp_expr e
