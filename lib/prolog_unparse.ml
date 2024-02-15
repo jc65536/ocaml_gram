@@ -15,9 +15,8 @@ let rec pp_expr f = function
       fprintf f "@[<v 2>o_if(%a,@ %a,@ %a)@]" pp_expr c pp_expr a pp_expr b
   | EList l -> fprintf f "@[<hv 2>o_list(@,%a@,)@]" (pp_pl_list pp_expr) l
   | ETuple t -> fprintf f "@[<hv 2>o_tup(%a)@]" (pp_pl_list pp_expr) t
-  | EAbs (pl, e) ->
-      fprintf f "@[<hv 2>@[<hv 2>o_fun(%a@],@ %a)@]" (pp_pl_list pp_patt) pl
-        pp_expr e
+  | EAbs (p, e) ->
+      fprintf f "@[<hv 2>@[<hv 2>o_fun(%a@],@ %a)@]" pp_patt p pp_expr e
   | EBop (a, o, b) ->
       fprintf f "@[o_bop(@,%a,@ %a,@ %a@,)@]" pp_expr a pp_bop o pp_expr b
   | ECons (x, xs) ->
