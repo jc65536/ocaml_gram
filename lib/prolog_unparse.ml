@@ -4,9 +4,6 @@ open Syntax
 let pp_pl_list pp =
   CCList.pp ~pp_start:(return "[@,") ~pp_stop:(return "]") pp
 
-let pp_pl_list_nb pp =
-  CCList.pp ~pp_start:(return "[@,") ~pp_stop:(return "]") pp
-
 let rec pp_expr f = function
   | EVar v -> fprintf f "o_var(%a)" string v
   | EInt i -> fprintf f "o_int(%a)" int i
@@ -29,7 +26,7 @@ let rec pp_expr f = function
         (pp_pl_list (pp_match pp_patt pp_expr))
         pl
   | EApp (fn, xs) ->
-      fprintf f "@[<hv 2>o_app(%a,@ %a)@]" pp_expr fn (CCList.pp pp_expr) xs
+      fprintf f "@[<hv 2>o_app(%a,@ %a)@]" pp_expr fn (pp_pl_list pp_expr) xs
 
 and pp_match p e f (a, b) = fprintf f "@[<hv 2>o_branch(%a,@ %a)@]" p a e b
 
