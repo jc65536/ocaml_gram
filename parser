@@ -1,5 +1,7 @@
 #!/bin/bash
 
+dune build
+
 javac Parser.java
 echo "Compiled Parser"
 
