@@ -1,0 +1,6 @@
+#!/bin/bash
+
+javac Parser.java
+echo "Compiled Parser"
+
+java Parser tumtumtree.cc
