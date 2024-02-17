@@ -6,20 +6,23 @@ How to run this parser
 
 3. Select YES for create as a new package.
 
-3. It will say failed to create switch and ask you if you want to clean up.
+4. It will say failed to create switch and ask you if you want to clean up.
    Select NO.
 
-4. eval $(opam env)
+5. eval $(opam env)
 
-5. Check the output of `which ocaml`. The output should be
+6. Check the output of `which ocaml`. The output should be
    <path to repo>/_opam/bin/ocaml.
 
-6. opam install dune menhir containers ppx_expect ppx_deriving
+7. If not, then check the output of `opam switch`. The arrow should be on the
+   current directory.
 
-7. dune build ocaml_gram
+8. opam install dune menhir containers ppx_expect ppx_deriving
 
-8. Now, `dune exec ocaml_gram` will read in an OCaml file from stdin and print
-   the AST to stdout.
+9. dune build ocaml_gram
+
+10. Now, `dune exec ocaml_gram` will read in an OCaml file from stdin and print
+    the AST to stdout.
 
 ---
 
