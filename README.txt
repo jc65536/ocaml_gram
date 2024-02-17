@@ -19,6 +19,8 @@ How to run this parser
 8. Now, `dune exec ocaml_gram` will read in an OCaml file from stdin and print
    the AST to stdout.
 
+---
+
 The executable works via stdin and stdout.
 
 $ cat some_input.txt
