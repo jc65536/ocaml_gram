@@ -4,6 +4,8 @@ How to run this parser
 
 2. opam switch create .
 
+3. Select YES for create as a new package.
+
 3. It will say failed to create switch and ask you if you want to clean up.
    Select NO.
 
