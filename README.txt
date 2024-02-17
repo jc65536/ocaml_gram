@@ -1,3 +1,24 @@
+How to run this parser
+
+1. Clone this repo and cd into the repo
+
+2. opam switch create .
+
+3. It will say failed to create switch and ask you if you want to clean up.
+   Select NO.
+
+4. eval $(opam env)
+
+5. Check the output of `which ocaml`. The output should be
+   <path to repo>/_opam/bin/ocaml.
+
+6. opam install dune menhir containers ppx_expect ppx_deriving
+
+7. dune build ocaml_gram
+
+8. Now, `dune exec ocaml_gram` will read in an OCaml file from stdin and print
+   the AST to stdout.
+
 The executable works via stdin and stdout.
 
 $ cat some_input.txt
