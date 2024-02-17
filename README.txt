@@ -23,7 +23,7 @@ How to run this parser
    opam install dune menhir containers ppx_expect ppx_deriving
 
 9. Run:
-   dune build ocaml_gram
+   dune build
 
 10. Now, `dune exec ocaml_gram` will read in an OCaml file from stdin and print
     the AST to stdout.
